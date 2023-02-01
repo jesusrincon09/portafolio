@@ -1,0 +1,28 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}Acerca de {% endblock %}
+
+{% block bacground %} {% static 'core/img/about-bg.jpg' %}{% endblock %}
+
+{% block header %}
+<h1>Acerca de</h1>
+<span class="subheading">Biografía</span>
+{% endblock %}
+
+{% block content %}
+{% for about in abouts  %}
+<div class="container">
+  <div class="row">
+    <div class="col-lg-3 col-md-4 offset-lg-1">
+      <img class="img-fluid avatar" src="{{ about.image.url }}" alt="">
+    </div>
+    <div class="col-lg-7 col-md-8">
+      
+      <h2 class="section-heading">{{about.name}}</h2>
+      <p>{{ about.description }}.</p>
+    </div>
+
+  </div>
+</div>
+{% endfor %}
+{% endblock %}

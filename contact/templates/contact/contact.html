@@ -1,0 +1,26 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}Contacto {% endblock %}
+
+{% block bacground %} {% static 'core/img/contact-bg.jpg' %}{% endblock %}
+
+{% block header %}
+<h1>Contacto</h1>
+<!-- <span class="subheading">Asesoría</span> -->
+{% endblock %}
+
+{% block content %}
+{% for contact in contacts  %}
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-md-10 mx-auto">
+      <p>{{ contact.description }} </p>
+      <br>
+      <p><b>Teléfono:</b> {{ contact.phone }}</p>
+      <p><b>Whatsapp:</b> {{ contact.whatsapp }}</p>
+      <p><b>Correo:</b> {{ contact.email }} </p>
+    </div>
+  </div>
+</div>
+{% endfor %}
+{% endblock %}
